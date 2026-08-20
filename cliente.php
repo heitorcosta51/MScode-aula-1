@@ -1,14 +1,39 @@
-<?php
+<?php 
+require_once('pessoa.php');
 
-class Cliente {
-    public int $id;
-    public string $nome;
-    public string $telefone;
-    public string $cpf;
-    public float $saldo_devedor;
+class Cliente extends Pessoa {
 
-    public function apresentar(): string
+    public function __construct(
+        public readonly int $id,
+        string $nome,
+         string $telefone,
+        string $cpf, 
+        private float $saldoDevedor
+    ){
+        parent::__construct(
+            $nome, 
+            $telefone,
+             $cpf
+        );
+    }
+
+
+    public function getId(): int
     {
-        return "Cliente: " . $this->nome;
+        return $this->id;
+    }
+
+
+    public function getSaldoDevedor(): float
+    {
+        return $this->saldoDevedor;
+    }
+
+    public function registrarCompra(Produto $produto, int $quantidade): self
+    {
+        $produto->vender($quantidade);
+        $this->saldoDevedor +=  $produto->getPreco() * $quantidade;
+
+        return $this;
     }
 }
