@@ -1,21 +1,13 @@
 <?php 
 
+require_once('./classes/cliente.php');
+require_once('./classes/produto.php');
+require_once('./classes/animal.php');
+require_once('./classes/gato.php');
+require_once('./classes/cachorro.php');
+
 session_start();
 
-require_once('cliente.php');
-require_once('produto.php');
-require_once('animal.php');
-require_once('gato.php');
-require_once('cachorro.php');
-
-$animais = [
-    new Gato('Klaus'),
-    new Cachorro('Bidu')
-];
-
-foreach ($animais as $animal){
-    $animal->apresentar();
-}
 
 $arrayClientes = [
     [
@@ -23,28 +15,32 @@ $arrayClientes = [
         'nome'          => 'Carlos Eduardo Silva',
         'telefone'      => '(11) 98765-4321',
         'cpf'           => '123.456.789-00',
-        'saldo_devedor' => 450.50
+        'saldo_devedor' => 450.50,
+        'email'=> 'davirocha2002.dr@gmail.com'
     ],
     [
         'id'            => 2,
         'nome'          => 'Mariana Oliveira Souza',
         'telefone'      => '(21) 99876-5432',
         'cpf'           => '987.654.321-11',
-        'saldo_devedor' => 0.00
+        'saldo_devedor' => 0.00,
+        'email'=> 'teste@teste.com'
     ],
     [
         'id'            => 3,
         'nome'          => 'Roberto Santos Costa',
         'telefone'      => '(31) 97654-3210',
         'cpf'           => '456.789.123-22',
-        'saldo_devedor' => 1250.00
+        'saldo_devedor' => 1250.00,
+        'email'=> 'teste@teste.com'
     ],
     [
         'id'            => 4,
         'nome'          => 'Fernanda Lima Rocha',
         'telefone'      => '(41) 98123-4567',
         'cpf'           => '321.654.987-33',
-        'saldo_devedor' => 89.90
+        'saldo_devedor' => 89.90,
+        'email'=> 'teste@teste.com'
     ]
 ];
 
@@ -54,7 +50,8 @@ foreach ($arrayClientes as $arrayCliente) {
         $arrayCliente['nome'],
         $arrayCliente['telefone'],
         $arrayCliente['cpf'],
-        $arrayCliente['saldo_devedor']
+        $arrayCliente['saldo_devedor'],
+        $arrayCliente['email']
     );
 
     $clientes[] = $cliente;
@@ -126,5 +123,6 @@ foreach ($arrayProdutos as $arrayProduto) {
 $pessoa = new Pessoa(
     'Davi',
     '2799999999',
-    '12345678910'
+    '12345678910',
+    'teste@email.com'
 );

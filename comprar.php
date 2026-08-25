@@ -1,6 +1,6 @@
 <?php
 require_once('dados.php');
-
+require_once('./classes/compraService.php');
 
 try {
     $produtoId = $_GET['id'] ?? null;
@@ -13,9 +13,12 @@ try {
     $_SESSION['clientes'][1] = $cliente->registrarCompra($produto, 1);
     $_SESSION['produtos'][$produtoId] = $produto;
 
+    $whatsapp = new Whastapp();
+    $compraService = new CompraService($whatsapp);
+    $compraService->finalizarCompra($cliente->getTelefone());
 
     header('Location: clientes.php');
 
-} catch (\Throwable $th) {
-    echo $th->getMessage();
+} catch (\Throwable $error) {
+    echo $error->getMessage();
 }
