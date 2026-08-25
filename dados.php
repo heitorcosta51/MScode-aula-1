@@ -1,10 +1,10 @@
 <?php 
 
-require_once('./classes/cliente.php');
-require_once('./classes/produto.php');
-require_once('./classes/animal.php');
-require_once('./classes/gato.php');
-require_once('./classes/cachorro.php');
+require_once(__DIR__ . '/../classes/cliente.php');
+require_once(__DIR__ . '/../classes/produto.php');
+require_once(__DIR__ . '/../classes/animal.php');
+require_once(__DIR__ . '/../classes/gato.php');
+require_once(__DIR__ . '/../classes/cachorro.php');
 
 session_start();
 
@@ -113,8 +113,10 @@ foreach ($arrayProdutos as $arrayProduto) {
         $arrayProduto['estoque']
     );
 
-      if (!isset($_SESSION['produtos'][$produto->codigo])) {
+        if (!isset($_SESSION['produtos'][$produto->codigo])) {
         $_SESSION['produtos'][$produto->codigo] = $produto;
+        } else {
+                $produto = $_SESSION['produtos'][$produto->codigo];
     }
 
     $produtos[] = $produto;
