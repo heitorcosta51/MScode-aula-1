@@ -2,7 +2,7 @@
  
 require_once(__DIR__ . '/cliente.php');
 require_once(__DIR__ . '/email.php');
-require_once(__DIR__ . '/../MScode-aula-1/calcularFrete.php');
+require_once(__DIR__ . '/../calcularFrete.php');
  
 class CompraService {
  

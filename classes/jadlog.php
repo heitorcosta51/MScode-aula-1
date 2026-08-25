@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . '/../MScode-aula-1/calcularFrete.php');
+require_once(__DIR__ . '/../calcularFrete.php');
 
 class Jadlog implements CalculadorFrete {
 

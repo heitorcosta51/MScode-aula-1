@@ -1,10 +1,10 @@
 <?php 
 
-require_once(__DIR__ . '/../classes/cliente.php');
-require_once(__DIR__ . '/../classes/produto.php');
-require_once(__DIR__ . '/../classes/animal.php');
-require_once(__DIR__ . '/../classes/gato.php');
-require_once(__DIR__ . '/../classes/cachorro.php');
+require_once(__DIR__ . '/classes/cliente.php');
+require_once(__DIR__ . '/classes/produto.php');
+require_once(__DIR__ . '/classes/animal.php');
+require_once(__DIR__ . '/classes/gato.php');
+require_once(__DIR__ . '/classes/cachorro.php');
 
 session_start();
 

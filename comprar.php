@@ -1,9 +1,9 @@
 <?php
 require_once(__DIR__ . '/dados.php');
-require_once(__DIR__ . '/../classes/compraService.php');
-require_once(__DIR__ . '/../classes/whatsapp.php');
-require_once(__DIR__ . '/../classes/correios.php');
-require_once(__DIR__ . '/../classes/jadlog.php');
+require_once(__DIR__ . '/classes/compraService.php');
+require_once(__DIR__ . '/classes/whatsapp.php');
+require_once(__DIR__ . '/classes/correios.php');
+require_once(__DIR__ . '/classes/jadlog.php');
  
 try {
     $produtoId = $_GET['id'] ?? null;
