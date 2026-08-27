@@ -1,5 +1,5 @@
 <?php
 
-interface CalculadorFrete {
+interface CalcularFrete {
     public function calcularFrete(float $valorProduto): float;
 }
