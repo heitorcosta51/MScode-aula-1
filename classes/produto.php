@@ -37,15 +37,15 @@ class Produto {
         return $this->quantidade;
     }
 
-    public function vender(int $quantidade)
+    public function setQuantidade(int $novaQuantidade): void
     {
-        if ($this->quantidade >= $quantidade) {
-            $this->quantidade -= $quantidade;
-            // $this->quantidade = $this->quantidade - $quantidade;
+        $this->quantidade = $novaQuantidade;
+    }
 
-        } else {
+    public function validarEstoque(int $quantidadeSolicitada): void
+    {
+        if ($this->quantidade < $quantidadeSolicitada) {
             throw new Exception("Quantidade Insuficiente pra compra", 500);
-            
         }
     }
 

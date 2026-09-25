@@ -31,11 +31,13 @@ class Cliente extends Pessoa {
         return $this->saldoDevedor;
     }
 
-    public function registrarCompra(Produto $produto, int $quantidade): self
+    public function setSaldoDevedor(float $novoSaldo): void
     {
-        $produto->vender($quantidade);
-        $this->saldoDevedor +=  $produto->getPreco() * $quantidade;
+        $this->saldoDevedor = $novoSaldo;
+    }
 
-        return $this;
+    public function adicionarSaldo(float $valor): void
+    {
+        $this->saldoDevedor += $valor;
     }
 }
