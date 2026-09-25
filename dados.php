@@ -101,6 +101,8 @@ $arrayProdutos = [
     ]
 ];
 
+
+
 $produtos = [];
 foreach ($arrayProdutos as $arrayProduto) {
     $produto = new Produto(

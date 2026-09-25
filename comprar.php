@@ -37,3 +37,4 @@ try {
 } catch (\Throwable $error) {
     echo $error->getMessage();
 }
+

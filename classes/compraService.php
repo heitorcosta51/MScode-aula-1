@@ -8,7 +8,7 @@ class CompraService {
  
      public function __construct(
         private CanalComunicacao $canalComunicacao,
-        private CalculadorFrete $calculadorFrete  
+        private CalcularFrete $calculadorFrete  
     ){
  
     }
